@@ -1,0 +1,21 @@
+<div data-role="page" id="indexpage">
+  <div data-role="header">
+    <h1>Welcome To HeatMap!</h1>
+  </div>
+  <div data-role="content">
+
+    <h2 id="testing"> Magic</h2>
+
+    <% @text_map.each_with_index do |w, index| %>o
+    <font id="w<%= index %>">
+      <%= w[0] %> </font>
+    <% end %>
+    <p></p>
+
+    <% @text_map.each do |w| %>
+    <font  style="background-color:<%= w[1] %>">
+      <%= w[0] %> </font>
+    <% end %>
+  </div>
+  Finished
+</div>
