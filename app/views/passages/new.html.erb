@@ -1,0 +1,17 @@
+<h1> New Passage </h1>
+
+<%= form_for :passage do |p| %>
+  <p>
+    <%= p.label :prompt %><br>
+    <%= p.text_field :prompt %>
+  </p>
+ 
+  <p>
+    <%= p.label :content %><br>
+    <%= p.text_area :content %>
+  </p>
+ 
+  <p>
+    <%= p.submit %>
+  </p>
+<% end %>
