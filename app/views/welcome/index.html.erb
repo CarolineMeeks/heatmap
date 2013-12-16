@@ -4,9 +4,16 @@
   </div>
   <div data-role="content">
 
-    <h2 id="testing"> Magic</h2>
+This app allows you to create an assignment that consists of a passage and a prompt. The prompt should tell the students what you want them to highlight from the passage.  Then ask your students to naviage to the url shown. When they highlight text you will see a heatmap representing your classes highligthing.
 
-    <% @text_map.each_with_index do |w, index| %>
+<h3>
+<%= link_to "Create an Assignment", new_passage_path %>
+</h3>
+
+
+    <h2 id="testing">Example: Magic</h2>
+
+    <% @text_map.each_with_index do |w, index| %>o
     <font id="w<%= index %>">
       <%= w[0] %> </font>
     <% end %>

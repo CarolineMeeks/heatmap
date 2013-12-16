@@ -1,0 +1,15 @@
+h1>Listing passages</h1>
+ 
+<table>
+  <tr>
+    <th>Prompt</th>
+    <th>Passage</th>
+  </tr>
+ 
+  <% @passage.each do |p| %>
+    <tr>
+      <td><%= p.prompt %></td>
+      <td><%= p.prompt %></td>
+    </tr>
+  <% end %>
+</table>
