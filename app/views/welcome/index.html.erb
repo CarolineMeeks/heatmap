@@ -1,28 +1,13 @@
 <div data-role="page" id="indexpage">
   <div data-role="header">
-    <h1>Welcome To HeatMap!</h1>
+    <h1>Welcome To Highlight Mapper!</h1>
   </div>
   <div data-role="content">
-
-This app allows you to create an assignment that consists of a passage and a prompt. The prompt should tell the students what you want them to highlight from the passage.  Then ask your students to naviage to the url shown. When they highlight text you will see a heatmap representing your classes highligthing.
-
-<h3>
-<%= link_to "Create an Assignment", new_passage_path %>
+<blockquote>
+This app allows you to create an assignment that consists of a passage and a prompt. The prompt should tell the students what you want them to highlight from the passage.  
+<p>
+After you have created your assignment ask your students to naviage to the url shown. When they highlight text you will see a heatmap representing your classes highligthing.
+</blockquote>
+<h3 align=center>
+<%= link_to "<button>Create an Assignment</button".html_safe, new_passage_path %>
 </h3>
-
-
-    <h2 id="testing">Example: Magic</h2>
-
-    <% @text_map.each_with_index do |w, index| %>o
-    <font id="w<%= index %>">
-      <%= w[0] %> </font>
-    <% end %>
-    <p></p>
-
-    <% @text_map.each do |w| %>
-    <font  style="background-color:<%= w[1] %>">
-      <%= w[0] %> </font>
-    <% end %>
-  </div>
-  Finished
-</div>
