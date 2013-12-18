@@ -5,7 +5,11 @@
  
 <p>
   <strong>Passage:</strong>
-  <%= @passage.content %>
+<% @text_map.each_with_index do |w, index| %>
+    <span style= "background-color:<%= w[1] %>" id="w<%= index %>">
+      <%= w[0] %> </span>
+
+    <% end %>
 </p>
 
 Have students type in this url to highlight the passage: <b><%= @highlight_url %></b>

@@ -1,0 +1,17 @@
+<div data-role="page" id="highlightpage">
+  <div data-role="header">
+    <h1> Highlight the following passage</h1>
+  </div>
+  <div data-role="content">
+
+    <h3><%= @passage.prompt %></h3>
+    <br>
+
+    <% @words.each_with_index do |w, index| %>
+    <font id="w<%= index %>">
+      <%= w.word %> </font>
+
+    <% end %>
+  </div>
+</div>
+
