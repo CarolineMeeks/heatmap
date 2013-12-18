@@ -1,0 +1,4 @@
+<h1> Highlight the following passage</h1>
+<h3><%= @prompt %></h3>
+<br>
+<%= @passage %>

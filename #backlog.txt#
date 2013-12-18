@@ -1,0 +1,25 @@
+Backlog Key
+A - Needed to even demo that something interesting is happening here
+B - Needed before even the most dedicated person other then me could use it
+C - Needed for Pilot
+D - Needed to not look stupid
+E - Enhancement
+
+
+A - Put the words into storage when a passage is created
+A - Show the passage by word rather then the passage itself
+A - Allow highlighting
+A - Record Highlights
+A - Show heatmap on load Passages#Show
+B - Write down the link to the highlight page for students to follow
+B - Bigger text field for passages
+C - Tiny URL to passages
+D - Build highlighting dynamically
+D - Swipe to highlight more then one word
+E - Let students put in initials (nym)
+E - Let teachers see a list of students by initial and pick a student
+E - Touch UI to pick a student from the highlights
+F - Let student mail the results to themselves
+F - Let teachrs mail all results to themselves
+F Save at PDF rather then mail
+G - Integrate with google docs/edmodo/EDx

@@ -1,5 +1,9 @@
+#TODO It may be wasteful to use resources highligts. Might just want to make the routes I use.
+
 Heatmap::Application.routes.draw do
-  resources :passages
+  resources :passages do
+    resources :highlights
+  end
 
   get "welcome/index"
   root "welcome#index"

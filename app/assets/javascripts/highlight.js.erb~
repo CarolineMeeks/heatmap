@@ -1,0 +1,22 @@
+$.ajaxSetup({
+  headers: {
+    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+  }
+});
+
+$(document).on("pageinit","#highlightpage",function(){
+    
+    for ( var i = 0; i < gon.numWords; i++) {
+	$("#w" + i).on("tap",function(){
+	    if (  $(this).data('word-highlighted') ) {
+		$(this).data('word-selected','false');
+		$(this).css('background-color', '#FFFFFF');
+		$.post("#create",{highlighted:false, index:i})
+	    } else {
+		$(this).data('word-highlighted','true');
+		$(this).css('background-color', '#FFFFD9');
+		$.post("#create",{highlighted:true, index:i})
+	    };
+	});
+    };                       
+});

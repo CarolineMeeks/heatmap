@@ -7,6 +7,3 @@
   <strong>Passage:</strong>
   <%= @passage.content %>
 </p>
-
-Have students type in this url to highlight the passage: <b><%= @highlight_url %></b>
-

@@ -1,0 +1,18 @@
+
+$(document).on("pageinit","#highlightpage",function(){
+    
+    for ( var i = 0; i < gon.numWords; i++) {
+	$("#w" + i).data('word-index',i);
+	$("#w" + i).on("tap",function(){
+	    if (  $(this).data('word-highlighted') ) {
+		$(this).data('word-selected','false');
+		$(this).css('background-color', '#FFFFFF');
+		$.post("#create",{highlighted:false, i:$(this).data('word-index'), "authenticity_token": AUTH_TOKEN})
+	    } else {
+		$(this).data('word-highlighted','true');
+		$(this).css('background-color', '#FFFFD9');
+		$.post("#create",{highlighted:true, i:$(this).data('word-index'), authenticity_token: AUTH_TOKEN})
+	    };
+	});
+    };                       
+});

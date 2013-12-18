@@ -11,13 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131212230901) do
+ActiveRecord::Schema.define(version: 20131217151623) do
 
   create_table "highlights", force: true do |t|
     t.integer  "word_id"
     t.string   "nym"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "highlighted"
+    t.string   "session_id"
   end
 
   add_index "highlights", ["word_id"], name: "index_highlights_on_word_id"
@@ -34,6 +36,7 @@ ActiveRecord::Schema.define(version: 20131212230901) do
     t.integer  "index"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "word"
   end
 
   add_index "words", ["passage_id"], name: "index_words_on_passage_id"
