@@ -1,7 +1,5 @@
 <h1>Listing passages</h1>
  
-<table>
-  <tr>
     <th>Prompt</th>
     <th>Passage</th>
   </tr>

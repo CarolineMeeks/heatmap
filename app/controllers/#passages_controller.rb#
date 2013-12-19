@@ -6,6 +6,8 @@ class PassagesController < ApplicationController
 
   def index
     @passages = Passage.all
+
+
   end
 
   def show

@@ -1,16 +1,19 @@
 <p>
-  <strong>Prompt</strong>
-  <%= @passage.prompt %>
+  Prompt:
+  <strong>
+    <%= @passage.prompt %>
+  </strong>
 </p>
  
-<p>
-  <strong>Passage:</strong>
+<p>Passage:</p>
+<div>
 <% @text_map.each_with_index do |w, index| %>
     <span style= "background-color:<%= w[1] %>" id="w<%= index %>">
       <%= w[0] %> </span>
 
     <% end %>
 </p>
+</div>
 
 Have students type in this url to highlight the passage: <b><%= @highlight_url %></b>
 
