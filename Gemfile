@@ -48,3 +48,4 @@ end
 
 gem 'pry', :group => :development
 gem 'gon'
+gem 'rails_12factor', group: :production
