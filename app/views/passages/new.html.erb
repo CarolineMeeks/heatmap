@@ -1,6 +1,6 @@
 <h1> New Passage </h1>
 
-<%= form_for :passage, url: passages_path do |p| %>
+<%= simple_form_for :passage, url: passages_path do |p| %>
 <% if @passage.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@passage.errors.count, "error") %> prohibited
@@ -22,7 +22,7 @@
     <%= p.text_area :content, size: "100x12" %>
   </p>
  
-  <p>
-    <%= p.submit %>
-  </p>
+<div>
+    <%= p.submit "Save" %>
+  </div>
 <% end %>
