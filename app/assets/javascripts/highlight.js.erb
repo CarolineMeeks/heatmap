@@ -1,6 +1,5 @@
 
-$(document).on("pageinit","#highlightpage",function(){
-    
+$(document).on("pagecreate","#highlightpage",function(){
     for ( var i = 0; i < gon.numWords; i++) {
 	$("#w" + i).data('word-index',i);
 	$("#w" + i).on("tap",function(){
