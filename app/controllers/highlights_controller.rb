@@ -3,7 +3,7 @@ class HighlightsController < ApplicationController
 
     @passage = Passage.find(params[:passage_id])
 
-    @words = Word.where(passage_id: @passage.id)
+    @words = Word.where(passage_id: @passage.id).order("id")
     gon.numWords = @words.length
 #    binding.pry
   end
