@@ -6,12 +6,14 @@ class PassagesController < ApplicationController
 
   def index
     @passages = Passage.all
+
+
   end
 
   def show
     @passage = Passage.find(params[:id])
 
-    @words = Word.where(passage_id: @passage.id)
+    @words = Word.where(passage_id: @passage.id).order("id")
     gon.numWords = @words.length    
     @highlight_url = url_for(:only_path => false) + "/highlights"
 
