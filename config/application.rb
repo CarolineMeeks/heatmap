@@ -6,8 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
-#This needs to be set for heroku
-config.assets.initialize_on_precompile = false
+#This needs to be set for heroku - Maybe not for Rails 4!
+#config.assets.initialize_on_precompile = false
 
 module Heatmap
   class Application < Rails::Application
