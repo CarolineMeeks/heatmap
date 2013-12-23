@@ -33,12 +33,17 @@ class PassagesController < ApplicationController
       w_ids << w.id
       
     end
-    
-    @num_students = Highlight.find_all_by_id(w_ids, :group => "session_id").count
+ 
+# This works in sqlite but not pg.   
+#    @num_students = Highlight.find_all_by_id(w_ids, :group => "session_id").count
+# This doesn't work at all    @num_students = Highlight.where(:word_id => w_ids, :group => "session_id").count
 
     @max_hl = n_hl.max
     min_hl = n_hl.min
     @spread = @max_hl - min_hl
+    
+    #total fake in case I need to demo
+    @num_students = @max_hl
     
     if @max_hl >= 1 
       #Now lets loop through the whole thing again and set up the colors.
