@@ -1,19 +1,38 @@
-<p>
-  Prompt:
-  <strong>
-    <%= @passage.prompt %>
-  </strong>
-</p>
+<div class="col-md-12">
+  <p>
+    Prompt:
+    <strong>
+      <%= @passage.prompt %>
+    </strong>
+  </p>
  
-<p>Passage:</p>
-<div>
-<% @text_map.each_with_index do |w, index| %>
-    <span style= "background-color:<%= w[1] %>" id="w<%= index %>">
-      <%= w[0] %> </span>
-
-    <% end %>
-</p>
+  
 </div>
+<div class="col-md-1">
+  <p>Passage:</p>
+</div>
+<div style= "background-color:=<%= @heatmap_colors[0] %>" class="col-md-9">
+  <% @text_map.each_with_index do |w, index| %>
+  <span style= "background-color:<%= w[1] %>; padding:2px;" id="w<%= index %>">
+    <%= w[0] %> </span>
+  
+  <% end %>
 
-Have students type in this url to highlight the passage: <b><%= @highlight_url %></b>
-
+</div>
+<div class="col-md-2">
+  <h4>Key</h4>
+<p><%= @num_students %> students have highlighted</p>
+  <ul>
+    <li style= "background-color:<%= @heatmap_colors[0] %>">No Highlights</li>
+ <% @heatmap_colors.each_with_index do |c, index| %>
+  <li style= "background-color:<%= c %>">
+    <%= c %> </li>
+  <% end %>
+  </ul>
+</div>
+<p>
+<div class="col-md-12">
+  <p>
+    Have students type in this url to highlight the passage: <b><%= @highlight_url %></b>
+  </p>
+</div>
