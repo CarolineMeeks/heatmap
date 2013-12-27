@@ -21,10 +21,14 @@ class PassagesController < ApplicationController
     
     #How many students have done any highlights for this passage?
 
-    @highlight_url = url_for(:only_path => false) + "/highlights"
-   long_url = "http://127.0.0.1:3000/passages/"+ @passage.id.to_s + "/highlights"
+#
+    if Rails.env.development?
 
-    
+      long_url = "http://127.0.0.1:3000/passages/"+ @passage.id.to_s + "/highlights"
+    else 
+      long_url = url_for(:only_path => false) + "/highlights"
+    end
+
 #    buffer = open(bitly_url, "UserAgent" => "Ruby-ExpandLink").read
  #   result = JSON.parse(buffer)
 

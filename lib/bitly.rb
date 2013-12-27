@@ -12,7 +12,6 @@ class Bitly
   # Usage: Bitly.shorten("http://example.com")
   def self.shorten(url)
     response = get('/v3/shorten', :query => required_params.merge(:longUrl => url ))
-    #binding.pry
     response['data']["url"]
   end
  
