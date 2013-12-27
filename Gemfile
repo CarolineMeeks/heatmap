@@ -55,3 +55,4 @@ group :development do
   gem 'rails_layout'
 end
 gem 'simple_form', github: 'wtfiwtz/simple_form_bootstrap3'
+gem "httparty"

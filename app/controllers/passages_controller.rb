@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+require 'bitly'
+
 class PassagesController < ApplicationController
 
   def new
@@ -19,32 +22,39 @@ class PassagesController < ApplicationController
     #How many students have done any highlights for this passage?
 
     @highlight_url = url_for(:only_path => false) + "/highlights"
+   long_url = "http://127.0.0.1:3000/passages/"+ @passage.id.to_s + "/highlights"
+
+    
+#    buffer = open(bitly_url, "UserAgent" => "Ruby-ExpandLink").read
+ #   result = JSON.parse(buffer)
+
+   @highlight_url = Bitly.shorten(long_url)
+
 
     #Code for highlighting
     @heatmap_colors = ["#95A3B5", "#41b6c4", "#7fcdbb", "#c7e9b4", "#edf8b1", "#ffffd9"]
     max_i_colors = (@heatmap_colors.count * 1.0) - 1
 
     #This is a really inefficient way to get the highest highlighted value.
-    n_hl = []
     w_ids = []
-    s_ids = Hash.new
+    n_hl = []
     @words.each do |w| 
-      n_hl << w.highlights.count
+      #TODO I think there is a better way to do this by cutting down what is selected in the first place perhaps then using the hash values?
       w_ids << w.id
-      
+      n_hl << w.highlights.count
+
     end
  
-# This works in sqlite but not pg.   
-#    @num_students = Highlight.find_all_by_id(w_ids, :group => "session_id").count
-# This doesn't work at all    @num_students = Highlight.where(:word_id => w_ids, :group => "session_id").count
 
+    #s_hl is the sessions that have highlighted this passage.
+    #n_hl is the number of times each word has been highlighted.
+    s_hl= Highlight.where(:word_id => w_ids).group("session_id").count
+    @num_students = s_hl.length
     @max_hl = n_hl.max
     min_hl = n_hl.min
     @spread = @max_hl - min_hl
     
-    #total fake in case I need to demo
-    @num_students = @max_hl
-    
+     
     if @max_hl >= 1 
       #Now lets loop through the whole thing again and set up the colors.
         @text_map = @words.inject([]) do |result, w|
@@ -68,7 +78,7 @@ class PassagesController < ApplicationController
           result << [w.word, color]
         end
       end
-        #    binding.pry
+ #     binding.pry
   end
 
   def create

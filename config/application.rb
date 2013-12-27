@@ -1,16 +1,19 @@
 require File.expand_path('../boot', __FILE__)
 
+
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+
 #This needs to be set for heroku - Maybe not for Rails 4!
 #config.assets.initialize_on_precompile = false
 
 module Heatmap
   class Application < Rails::Application
+#    config.force_ssl = true
     # Settings in config/environments/* take precedence over nothose specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
